@@ -52,7 +52,7 @@ public class FlipCoin {
     * Head vs tail average percentage
     */
         System.out.println("Head Percentage:"+(100*head/(head+tail)));
-        System.out.println("Head Percentage:"+(100*tail/(head+tail)));
+        System.out.println("Tail Percentage:"+(100*tail/(head+tail)));
     }
     
 }

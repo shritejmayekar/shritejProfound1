@@ -13,6 +13,7 @@
 package com.bridgelabz.util;
 
 public class Distance {
+	static int x,y,distance;
 	/*
     * The main function is written to get Euclidean distance
     */
@@ -20,15 +21,15 @@ public class Distance {
     /*
     * x variable stores the number entered by the user as the input
     */  
-		int x=Integer.parseInt(args[0]);
+		 x=Integer.parseInt(args[0]);
 	/*
     * y variable stores the number entered by the user as the input
     */
-        int y=Integer.parseInt(args[1]);
+       y=Integer.parseInt(args[1]);
 	/*
     * distance variable stores the result of x*x and y*y and calculating using Math.pow function
     */	
-        int distance=(int) Math.pow(x, 2)+(int)Math.pow(y, 2);
+        distance=(int) Math.pow(x, 2)+(int)Math.pow(y, 2);
 	/*
     * Taking Distance squareroot to find euclidean distance using Math.sqrt function
     */

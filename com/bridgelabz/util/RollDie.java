@@ -24,7 +24,7 @@ class RollDie
 		for(int i=0;i<n;i++)
 		{
 			die=(int)(1+Math.random()*6);
-			System.out.println("The "+die);
+			System.out.println("Die "+die);
 			max=Math.max(max,die);
 		}
 		

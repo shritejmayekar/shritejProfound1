@@ -14,6 +14,14 @@ package com.bridgelabz.util;
 
 public class CarLoan {
 	/*
+	*	To store valuesof principal,year and rate.
+	*/
+	static double Principal,Year,Rate;
+	/*
+	*	To calculate monthly payment
+	*/
+	static double p,n,r,payment;
+	/*
     * The main function is written to get monthly payment class
     */
     public static void main(String[] args) {
@@ -21,21 +29,21 @@ public class CarLoan {
 	/*
     * Principal variable stores the number entered by the user as the input
     */		   
-        double Principal=Double.parseDouble(args[0]);
+		Principal=Double.parseDouble(args[0]);
 	/*
     * Year variable stores the number entered by the user as the input
     */
-        double Year=Double.parseDouble(args[1]);
+		Year=Double.parseDouble(args[1]);
 	/*
     * Rate variable stores the number entered by the user as the input
     */
-        double Rate=Double.parseDouble(args[2]);
+		Rate=Double.parseDouble(args[2]);
 		
     //Assigning Values of principal,year and rate to p,n and r for calculation
-        double n=12*Year;
-        double r=Rate/(12*100);
+         n=12*Year;
+		r=Rate/(12*100);
 	//payement stores an montly payement amount
-        double payment=(Principal*r)/(1-Math.pow(1+r, -n));
+		payment=(Principal*r)/(1-Math.pow(1+r, -n));
     //printing montly payement    
         System.out.println("The monthly payment:"+payment);
         

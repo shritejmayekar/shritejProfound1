@@ -11,9 +11,9 @@
  ******************************************************************************/
  package com.bridgelabz.util; 
 public class Binary { 
-		int n
+	static int n
 	// set power to the largest power of 2 that is <= n
-        int power = 1;
+    static int power = 1;
     public static void main(String[] args) { 
 
         // read in the command-line argument

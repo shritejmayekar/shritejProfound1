@@ -14,8 +14,8 @@ import java.util.Scanner;
 
 class RollDie
 {
-	int n, die;
-	int max=0;
+	static int n, die;
+	static int max=0;
 	public static void main(String args[])
 	{	
 		Scanner in=new Scanner(System.in);

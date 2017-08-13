@@ -15,6 +15,10 @@ import java.util.Scanner;
 
 
 public class DoubleOpt {
+	//To store values
+	static double a,b,c;
+	//To store result of operation
+	static double Operation1,Operation2,Operation3,Operation4;
     /*
     * The main function is written to get DoubleOpt
     */
@@ -27,17 +31,17 @@ public class DoubleOpt {
     * a variable stores the number entered by the user as the input
     */     
         System.out.print("Enter a:");
-        double a=input.nextDouble();
+        a=input.nextDouble();
 	/*
     * b variable stores the number entered by the user as the input
     */ 
         System.out.print("\nEnter b:");
-        double b=input.nextDouble();
+        b=input.nextDouble();
 	/*
     * c variable stores the number entered by the user as the input
     */ 
         System.out.print("\nEnter c:");
-        double c=input.nextDouble();
+        c=input.nextDouble();
 	/*
     * Double Opeartions
     */ 
@@ -45,22 +49,22 @@ public class DoubleOpt {
 	/*
     * Perform operation a+b*c and store in Operation1
     */ 
-        double Operation1=a+b*c;
+        Operation1=a+b*c;
         System.out.println("a+b*c="+Operation1);
 	/*
     * Perform operation a*b+c and store in Opeartion2
     */
-        double Operation2=a*b+c;
+        Operation2=a*b+c;
         System.out.println("a*b+c="+Operation2);
 	/*
     * Perform operation c+a/b and store in Opeartion3
     */
-        double Operation3=c+a/b;
-        System.out.println("c+a/b="+Operation3);
+       Operation3=c+a/b;
+       System.out.println("c+a/b="+Operation3);
 	/*
     * Perform operation a%b+c and store in Opeartion3
     */
-        double Operation4=a%b+c;
+        Operation4=a%b+c;
         System.out.println("a%b+c="+Operation4);
     }
     

@@ -2,7 +2,7 @@
  *  Compilation:  javac -d bin com/bridgelabz/util/Cos.java
  *  Execution:    java -cp bin com.bridgelabz.util.Cos
  *  
- *  Purpose: To find sine using Taylor series
+ *  Purpose: To find cosine using Taylor series
  *
  *  @author  Shritej
  *  @version 1.0

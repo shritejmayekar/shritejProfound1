@@ -37,7 +37,7 @@ public class GamblingSimulator {
         // print results
         System.out.println(wins + " wins of " + trials);
         System.out.println("Percent of games won = " + 100.0 * wins / trials);
-        System.out.println("Average no. bets           = " + 1.0 * bets / trials);
+        System.out.println("Average no. bets           = " + 100.0 * bets / (trials+bets));
     }
 
 }

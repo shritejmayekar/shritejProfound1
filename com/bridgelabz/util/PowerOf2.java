@@ -11,12 +11,14 @@
  ******************************************************************************/
  package com.bridgelabz.util;
 public class PowerOf2 {
+	//declaring nth power of 2
+	static int n;
 	/*
     * The main function is written to get 2 table
     */
     public static void main(String[] args) {
         //Take range upto table will be printed and store in n
-            int n=Integer.parseInt(args[0]);
+            n=Integer.parseInt(args[0]);
 			//print table of 2 upto 2^n
             for(int i=0;i<=n;i++)
             {

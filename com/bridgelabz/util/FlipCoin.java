@@ -14,6 +14,8 @@
  import java.util.Scanner;
  
 public class FlipCoin {
+	//declaring variables for no. of simulation and head/tail counter
+	static int n,head,tail;
 	/*
     * The main function is written to get FlipCoin
     */
@@ -21,13 +23,13 @@ public class FlipCoin {
     /*
     * Initializing head and tail to 0
     */        
-		int head=0,tail=0;
+		head=0,tail=0;
 	/*
     * Scanner class to get input of no. of simulation
     */
         Scanner in=new Scanner(System.in);
         System.out.println("No. of times coin simulation");
-        int n=in.nextInt();
+         n=in.nextInt();
 	/*
     * No. times FlipCoin simulation
     */

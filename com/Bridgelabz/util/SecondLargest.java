@@ -21,7 +21,7 @@ class SecondLargest
 	/*
 	*	To store min and secondMin
 	*/
-	static int min=1,secondMin;
+	static int min=99,secondMin;
 	/*
 	*	main method to calculate secondlargest and second smallest
 	*/
@@ -41,36 +41,28 @@ class SecondLargest
 		for(int i=0;i<n;i++)
 		{		//Taking array element form user
 				array[i]=in.nextInt();
-				//storing second max value as max
-				secondMax=max;
-				
-				//finding max of element
+				//Using math function calculate max and min
 				max=Math.max(max,array[i]);
-				if((secondMax<max))
-				{
-					secondMax=Math.min(secondMax,array[i]);
-				}
-			
-				//calculate second_max by taking min of max and second_max
-				//secondmax=math.min(max,secondmax);
-				//secondmin=min;
-				//min=math.min(min,array[i]);
-				//calculate second_min by taking min of min and second_min
-				//secondmax=math.min(min,secondmin);
-				
-				
+				min=Math.min(min,array[i]);
 		}
 		
-			 
-		for(int i=0;i<n;i++)
-		{
-		
-		}
+			 //Assigning secondMax as min value
+			secondMax=min;
+			//Assigning secondMin as max  value
+			secondMin=max;
+			//find secondMin and secondMax
+			for(int j=0;j<n;j++)
+			{
+				if((secondMax<array[j])&&(array[j]<max))
+					secondMax=array[j];
+				if((secondMin>array[j])&&(array[j]>min))
+					secondMin=array[j];
+			}
 		
 		System.out.println("max="+max);
-		System.out.println("second_max="+secondMax);
-		//System.out.println("min="+min);
-		//System.out.println("second_min="+secondMin);
+		System.out.println("secondMax="+secondMax);
+		System.out.println("min="+min);
+		System.out.println("secondMin="+secondMin);
 		
 	}
 }

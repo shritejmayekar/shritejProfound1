@@ -39,25 +39,26 @@ class SecondLargest
 		
 		System.out.println("Enter numbers:");
 		for(int i=0;i<n;i++)
-		{		//Taking array element form user
-				array[i]=in.nextInt();
-				//Using math function calculate max and min
-				max=Math.max(max,array[i]);
-				min=Math.min(min,array[i]);
+		{		
+			//Taking array element form user
+			array[i]=in.nextInt();
+			//Using math function calculate max and min
+			max=Math.max(max,array[i]);
+			min=Math.min(min,array[i]);
 		}
 		
-			 //Assigning secondMax as min value
-			secondMax=min;
-			//Assigning secondMin as max  value
-			secondMin=max;
-			//find secondMin and secondMax
-			for(int j=0;j<n;j++)
-			{
-				if((secondMax<array[j])&&(array[j]<max))
-					secondMax=array[j];
-				if((secondMin>array[j])&&(array[j]>min))
-					secondMin=array[j];
-			}
+		 //Assigning secondMax as min value
+		secondMax=min;
+		//Assigning secondMin as max  value
+		secondMin=max;
+		//find secondMin and secondMax
+		for(int j=0;j<n;j++)
+		{
+			if((secondMax<array[j])&&(array[j]<max))
+				secondMax=array[j];
+			if((secondMin>array[j])&&(array[j]>min))
+				secondMin=array[j];
+		}
 		
 		System.out.println("max="+max);
 		System.out.println("secondMax="+secondMax);

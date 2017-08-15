@@ -31,9 +31,9 @@ public class Cos {
 	public static void displaySeries(double angleRadian )
 	{
 		while(i<number)
-        {
+		{
 			if(i==1)
-				System.out.print(1);
+				System.out.print(1);	
 			else
 			{
 				System.out.print(angleRadian+"^"+i+"/");
@@ -44,7 +44,7 @@ public class Cos {
 			else
 				System.out.print("+");	
 			i=i*2;
-        }
+		}
 	}
     //main method to get cosx 
     public static void main(String[] args) {

@@ -14,7 +14,7 @@ import java.util.Scanner;
 
 class RollDie
 {
-	static int n, die,k=0;
+	static int n, die,k=0,position=0;
 	static int max=0,count=0;
 
 	public static void main(String args[])
@@ -33,28 +33,23 @@ class RollDie
 		}
 		for(int i=0;i<n;i++)
 		{
-			
+			count=0;
 			for(int j=0;j<n;j++)
 			{
 				if(arr[i]==arr[j])
 				{
 					count++;
+					position=j;
 				}
 				if(count==2)
 				{
-					repeated[k++]=arr[j];
-					
-					break;
+				System.out.println("The "+arr[position]+" is occured maximum no. of times");	
+					break;						
 				}
+				
 			}
-			count=0;
+			
 		}
-		for(int i=0;i<k;i++)
-		{
-			System.out.println("The "+repeated[i]+" is repeated");
-		}
-		
-
 		
 	}
 }

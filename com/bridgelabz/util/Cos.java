@@ -1,6 +1,6 @@
 /******************************************************************************
- *  Compilation:  javac -d bin com/bridgelabz/util/Sin.java
- *  Execution:    java -cp bin com.bridgelabz.util.Sin
+ *  Compilation:  javac -d bin com/bridgelabz/util/Cos.java
+ *  Execution:    java -cp bin com.bridgelabz.util.Cos
  *  
  *  Purpose: To find sine using Taylor series
  *
@@ -12,7 +12,7 @@
  package com.bridgelabz.util;
  import java.util.Scanner;
  
-public class Sin {
+public class Cos {
 	//variable declaration
     static double fact=1,sum=0,number=8,i=1;
     static double counter=2,angleDegree,sumSinx;
@@ -32,17 +32,21 @@ public class Sin {
 	{
 		while(i<number)
         {
-            System.out.print(angleRadian+"^"+i+"/");
-            System.out.print(i+"!");
-            if(counter++%2==0)
-                System.out.print("-");
-            else
-                System.out.print("+");
-            
-            i=i+2;
+			if(i==1)
+				System.out.print(1);
+			else
+			{
+				System.out.print(angleRadian+"^"+i+"/");
+				System.out.print(i+"!");
+			}
+			if(counter++%2==0)
+				System.out.print("-");
+			else
+				System.out.print("+");	
+			i=i*2;
         }
 	}
-    //main method to get sinx 
+    //main method to get cosx 
     public static void main(String[] args) {
             
         Scanner input=new Scanner(System.in);
@@ -57,9 +61,9 @@ public class Sin {
         {
             sum+=Math.pow(angleRadian, i)/factorial(i);
             sign=-sign;
-            i=i+2;
+            i=i*2;
         }
-        System.out.println("\nsinx="+sum);
+        System.out.println("\ncosx="+sum);
         
     }
     

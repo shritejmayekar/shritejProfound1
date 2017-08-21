@@ -26,8 +26,10 @@ import java.util.Scanner;
  public class MathFunction {
     public static double compound,rate,time,C;
     public static double slopeAB,slopeBC,slopeAC;
-    public static int x1,y1,x2,y2,x3,y3,choice,number;
+    public static int x1,y1,x2,y2,x3,y3,choice,number,i;
     public static long fact=1;
+	public static double angleDegree,sum;
+    public static double angleRadian;
 /*	Method returns to checkCollinearUsingSlope
 * 	@param (x1,y1),(x2,y2) and (x3,y3) as input to check collinear
 *	@return true if collinear else returns false
@@ -109,12 +111,12 @@ import java.util.Scanner;
 *	@param n as number
 *	@return sum as harmonic number
 */
-     public static double Harmonic(int n)
+     public static double Harmonic(int number)
     {
         double sum=0.0;
-        for (int i = 1; i <= n; i++) {
+        for (int i = 1; i <= number; i++) {
             System.out.print("1/"+i);
-            if(i<n)
+            if(i<number)
         	System.out.print("+");
 			
             sum=sum+Math.pow(i, -1);
@@ -125,7 +127,7 @@ import java.util.Scanner;
         
         Scanner in=new Scanner(System.in);
 		System.out.println("\nPlease enter choice\n1.To find Compound rate\n2.Collinear using slope"+
-			"\n3.Collinear using area\n4.Find squareroot\n5.Factorial");
+			"\n3.Collinear using area\n4.Find squareroot\n5.Factorial\n6.Harmonic\n7.Sine");
 		choice=in.nextInt();
         switch(choice)
 		{
@@ -177,6 +179,35 @@ import java.util.Scanner;
 */      	System.out.print("Enter the number:");
 			number=in.nextInt();
 			System.out.println("fact="+factorial(number));
+			break;
+			
+			case 6:
+/*
+*	Find harmonic of number
+*/			System.out.println("Enter the nth number:");
+			number=in.nextInt();
+			System.out.println("\nThe sum of Harmonic:"+Harmonic(number));
+			break;
+			
+			case 7:
+/*
+*	Find sine of number
+*/
+			System.out.println("Enter the angle and terms:");
+			angleDegree=in.nextInt();
+			number=in.nextInt();
+		   //angle to radian
+			angleRadian=angleDegree * (Math.PI/180);
+			i=1;
+			int sign=1;
+			while(i<number)
+			{
+				sum+=Math.pow(angleRadian, i)/factorial(i);
+				sign=-sign;
+				i=i+2;
+			}
+			System.out.println("\nsinx="+sum);
+			
 			break;
 			
 			default:

@@ -13,23 +13,32 @@
 import java.util.Scanner;
 
 public class PrintThreeNames {
-    /*
-    * The main function is written to print Names and descending order
-    */
+//Declare variables
+	public static int length=args.length;
+	public static String inputName="";
+	public static String reverseName="";
+/*
+ *	The main function is written to print Names in descending order
+*/
     public static void main(String[] args) {
-     /*
-    * Scanner class to get input of three names
-    */  
-        Scanner input=new Scanner(System.in);
-        System.out.print("Enter three  Names:");
-        String Name1=input.next();
-        String Name2=input.next();
-        String Name3=input.next();
-	/*
-    * Printing three names
-    */
-        System.out.println("==========");
-        System.out.println("Hi "+Name3+","+Name2+" and "+Name1);
+/*
+*	Take an input using command line argument
+*/      
+    
+	for(int i=0;i<length;i++)
+	{
+		inputName=inputName+args[i]+" ";
+	}
+	
+/*
+*	Printing three names
+*/
+	System.out.print("Hi ");
+	for(int i=length-1;i>=0;i--)
+	{
+		reverseName=reverseName+args[i]+", ";
+	}
+	System.out.print(reverseName);
         
         
                 

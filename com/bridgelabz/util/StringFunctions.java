@@ -70,9 +70,9 @@ public class StringFunctions {
                 {
                   if(name[i]==dummyname[j])  
                   {
-					  dummyname[j]='$';
-					  count++;
-					  break;
+		dummyname[j]='$';
+		count++;
+		break;
                   }
                 }
                

@@ -12,30 +12,31 @@
 package com.bridgelabz.util;
 
 import java.util.Scanner;
-/*
+/**
 *	Main Class to perform string functions
 */
 public class StringFunctions {
 	
-/*
+/**
 *	Variables Declaration for storing input and to perform operation
 */
-    public static char[] name=new char[10];
-    public static char[] dummyname=new char[10];
+    public static char[] name;
+    public static char[] dummyname;
     public static String inputName,inputNameFisrt,inputNameSecond;
     public static int count=0,choice=1;
-/*
+/**
 *	Static Variable is declared to Print message if the name is anagram or not
 */
-	public static String ANAGRAM_MESSAGE="The name is anagram";
+    public static String ANAGRAM_MESSAGE="The name is anagram";
     public static String NOT_ANAGRAM_MESSAGE="The name is not anagram";
-/*
+
+/**
 *	Static Variable is declared to Print message if the name is pallindrome or not
 */
     public static String PALLINDROME_MESSAGE=" is Pallindrome";
     public static String NOT_PALLINDROME_MESSAGE=" is not Pallindrome";
     
-/*
+/**
 *	static method to check string is pallindrome or not
 */
     public static Boolean isPallindrome(String inputname)
@@ -54,7 +55,7 @@ public class StringFunctions {
 		return false;
 	}
     
-/*
+/**
 *	static method to check two string  are anagram or not
 */    
     public static Boolean isAnagram(String name1,String name2 ) 
@@ -69,7 +70,7 @@ public class StringFunctions {
                 {
                   if(name[i]==dummyname[j])  
                   {
-					  dummyname[j]='$';
+	      dummyname[j]='$';
                       count++;
                       break;
                   }
@@ -81,17 +82,17 @@ public class StringFunctions {
         }
 		return false;  
     }
-/*
+/**
 *	main method to perform string functions
 */
     public static void main(String[] args) {
-/*
+/**
 *	scanner class for taking input
 */       
-		Scanner input=new Scanner(System.in);
-		System.out.println("Please enter the choice\n"
-                + " 1.Anagram \n 2.Pallindrome ");
-        choice=input.nextInt();		//Take choice of above Menu
+	Scanner input=new Scanner(System.in);
+	System.out.println("Please enter the choice\n"
+               + " 1.Anagram \n 2.Pallindrome ");
+    choice=input.nextInt();	//Take choice of above Menu
         switch(choice)
         {
            case 1:
@@ -99,7 +100,7 @@ public class StringFunctions {
             inputNameFisrt=input.next();
             System.out.println("Please enter the Name 2:");
             inputNameSecond=input.next();
-/*
+/**
 *	static method call if returns true than anagram else not
 */
             if(isAnagram(inputNameFisrt, inputNameSecond))

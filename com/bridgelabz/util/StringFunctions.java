@@ -56,13 +56,45 @@ public class StringFunctions {
 			return true;
 		return false;
 	}
-    
+/**
+*	static method for removeWhiteSpaces
+*/
+    public static String removeWhiteSpaces(String name)
+	{
+		char ch[]=name.toCharArray();
+		for(int i=0;i<ch.length;i++)
+		{
+			
+			if(ch[i]==' ')
+			{
+				int j=i;
+				while(j<ch.length-1)
+				{
+					ch[j]=ch[j+1];
+					ch[j+1]='\000';
+					j++;
+				}
+				break;
+			}
+		
+		}
+		
+		System.out.println(ch);
+		String removeSpace=new String(ch);
+		String[] rev=removeSpace.split("\000");
+		System.out.println(rev[0]);
+		removeSpace=rev[0];
+		return removeSpace;
+	}
 /**
 *	static method to check two string  are anagram or not
 */    
     public static Boolean isAnagram(String name1,String name2 ) 
     {
-		
+		//name1=name1.replaceAll("\\s","");
+		//name2=name2.replaceAll("\\s","");
+		name1=removeWhiteSpaces(name1);
+		name2=removeWhiteSpaces(name2);
         name=name1.toCharArray();
         dummyname=name2.toCharArray();
         if(name1.length()==name2.length())
@@ -174,10 +206,11 @@ public class StringFunctions {
         switch(choice)
         {
            case 1:
+			Scanner scanner=new Scanner(System.in);
             System.out.println("Please enter the Name:");
-            inputNameFisrt=input.next();
+            inputNameFisrt=scanner.nextLine();
             System.out.println("Please enter the Name 2:");
-            inputNameSecond=input.next();
+            inputNameSecond=scanner.nextLine();
 /**
 *	static method call if returns true than anagram else not
 */

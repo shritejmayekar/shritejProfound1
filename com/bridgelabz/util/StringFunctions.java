@@ -78,11 +78,11 @@ public class StringFunctions {
 			}
 		
 		}
-		
-		System.out.println(ch);
+		//char[] to string conversion
 		String removeSpace=new String(ch);
+		//split after space
 		String[] rev=removeSpace.split("\000");
-		System.out.println(rev[0]);
+		
 		removeSpace=rev[0];
 		return removeSpace;
 	}

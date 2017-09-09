@@ -86,6 +86,20 @@ public class StringFunctions {
 		removeSpace=rev[0];
 		return removeSpace;
 	}
+	static String removeSpaces(String str)
+    { 
+          String removeSpace="";
+	 for( int i=0;i<str.length();i++)
+	{
+		if((str.charAt(i)!=' '))
+		{
+		removeSpace=removeSpace+str.charAt(i);
+		}
+             
+	}
+                 return removeSpace;
+
+     } 
 /**
 *	static method to check two string  are anagram or not
 */    
@@ -93,8 +107,15 @@ public class StringFunctions {
     {
 		//name1=name1.replaceAll("\\s","");
 		//name2=name2.replaceAll("\\s","");
-		name1=removeWhiteSpaces(name1);
-		name2=removeWhiteSpaces(name2);
+		
+		//conversion to lowercase
+		name1=name1.toLowerCase();
+		name2=name2.toLowerCase();
+		
+		//removeSpace
+		name1=removeSpaces(name1);
+		name2=removeSpaces(name2);
+		
         name=name1.toCharArray();
         dummyname=name2.toCharArray();
         if(name1.length()==name2.length())
@@ -105,9 +126,9 @@ public class StringFunctions {
                 {
                   if(name[i]==dummyname[j])  
                   {
-		dummyname[j]='$';
-		count++;
-		break;
+					dummyname[j]='$';
+					count++;
+					break;
                   }
                 }
                
@@ -151,46 +172,48 @@ public class StringFunctions {
 				}
 			}
 		}
-		// for(int i=0;i<name.length;i++)
-			// System.out.println(name[i]);
+		
 		return name;
 	}
-	public static void recuString(String name)
-	{
-		dummyname=name.toCharArray();
-		char name2[];
-		for(int i=0;i<dummyname.length;i++)
-		{
-			char c=dummyname[0];
-			dummyname[0]=dummyname[i];
-			dummyname[i]=c;
-			
-			name2=dummyname;
-			int k=1;
-			//System.out.println(name2);
-			for(int j=0;j<dummyname.length-1;j++)
-			 {
-				 System.out.println(name2);
-				 char temp;
-			temp=name2[name2.length-1];
-			 name2[name2.length-1]=name2[j];
-			 name2[j]=temp;
-			 
-			//System.out.println(name2);
-			// if(k<3)
-			// {
-			// char temp;
-			// temp=name2[k];
-			// name2[k]=name2[k+1];
-			// name2[k]=temp;
-			// //System.out.println(name2);
-			// k++;
-			// }
-			
-			}
-			
-		}
-	}
+	
+
+    /**
+     * permutation function
+     * @param word string to calculate permutation for
+     * @param begin starting index
+     * @param last end index
+     */
+    public static void permute(String word, int begin, int last)
+    {
+        if (begin== last)
+            System.out.println(word);
+        else
+        {
+            for (int i = begin; i <= last; i++)
+            {
+                word = swap(word,begin,i);
+                permute(word, begin+1, last);
+                word = swap(word,begin,i);
+            }
+        }
+    }
+ 
+    /**
+     * Swap Characters at position
+     * @param a string value
+     * @param i position 1
+     * @param j position 2
+     * @return swapped string
+     */
+    public static String swap(String a, int i, int j)
+    {
+        char temp;
+        char[] charArray = a.toCharArray();
+        temp = charArray[i] ;
+        charArray[i] = charArray[j];
+        charArray[j] = temp;
+        return String.valueOf(charArray);
+    }	
 	
 /**
 *	main method to perform string functions
@@ -201,7 +224,7 @@ public class StringFunctions {
 */       
 	Scanner input=new Scanner(System.in);
 	System.out.println("Please enter the choice\n"
-               + " 1.Anagram \n 2.Pallindrome \n 3.Recur");
+               + " 1.Anagram \n 2.Pallindrome \n 3.Permutation");
     choice=input.nextInt();	//Take choice of above Menu
         switch(choice)
         {
@@ -234,7 +257,7 @@ public class StringFunctions {
 			case 3:
 			System.out.print("Please enter the Name:");
             inputName=input.next();
-			recuString(inputName);
+			permute(inputName,0,inputName.length()-1);
 			
 			break;
            
